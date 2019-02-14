@@ -12,6 +12,14 @@ services:
       - '/usr/lib64/libltdl.so.7:/usr/lib/x86_64-linux-gnu/libltdl.so.7'
     ports:
       - 8080:8080
+    environment:
+      - DOCKER_NGINX_CONTAINER_NAME=${DOCKER_NGINX_CONTAINER_NAME}
+      - DOCKER_NGINX_DIR=${DOCKER_NGINX_DIR}
+      - DOCKER_NGINX_VHOST_DIR=${DOCKER_NGINX_VHOST_DIR}
+      - DOCKER_NGINX_CA_DIR=${DOCKER_NGINX_CA_DIR}
+      - WWWROOT_DIR=${WWWROOT_DIR}
+      - LOCAL_DIR=${LOCAL_DIR}
+
 
 networks:
   default:
