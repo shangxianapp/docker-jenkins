@@ -1,9 +1,7 @@
 #!/bin/bash
 
-docker-compose up -d
+docker-compose up -d --force-recreate
 
-cp -r nginx.conf ${NGINX_VHOST_DIR}/jenkins.shangxian.app.conf
+cp -r nginx.conf ${DOCKER_NGINX_VHOST_DIR}/jenkins.shangxian.app.conf
 
-cd ${DOCKER_NGINX_DIR}
-
-docker-compose up -d
+/bin/sh $DOCKER_NGINX_DIR/reload.sh
